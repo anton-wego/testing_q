@@ -1,0 +1,26 @@
+  <table>
+    <tr>
+      <td><%= flash[:alert] if flash[:alert].present? %></td>
+    </tr>
+    <tr>
+      <td><%= @quiz.errors.full_messages.join(', ') %></td>
+    </tr>
+  </table>
+  <table border=1>
+    <tr>
+      <td colspan='3'><%= @quiz.new_record? ? 'New' : 'Edit' %> Question</td>
+    </tr>
+    <tr>
+      <td>Question</td>
+      <td>:</td>
+      <td style="height: 175px;"><%= f.text_area :question %></td>
+    </tr>
+    <tr>
+      <td>Answer</td>
+      <td>:</td>
+      <td><%= f.text_field :answer %></td>
+    </tr>
+    <tr>
+      <td colspan='3'><%= f.submit (@quiz.new_record? ? 'Create' : 'Update') %></td>
+    </tr>
+  </table>

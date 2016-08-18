@@ -1,0 +1,20 @@
+  <table border=1>
+    <tr>
+      <td>Question</td>
+      <td>:</td>
+      <td style="height: 175px;"><%= @quiz.question.html_safe %></td>
+    </tr>
+    <tr>
+      <td>Answer</td>
+      <td>:</td>
+      <td>
+        <%= text_field_tag :answer %>
+        <%= hidden_field_tag :quiz_id, @quiz.id %>
+      </td>
+    </tr>
+    <tr>
+      <td colspan='3'><%= submit_tag 'Submit', id: 'submit_answer' %></td>
+    </tr>
+  </table>
+  <div id='results'>
+  </div>
