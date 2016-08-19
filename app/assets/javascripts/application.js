@@ -42,13 +42,12 @@
 //= require plugins/url.min.js
 //= require plugins/video.min.js
 
-$(function() {
+var ready = function(){
   $('textarea').froalaEditor({
     height: 300
   });
 
   $('#submit_answer').click(function(){
-    alert('adsf');
     $.ajax({
       method: "POST",
       url: '/submit_answer',
@@ -57,4 +56,6 @@ $(function() {
       $('#results').append("Answer by user on Quiz mode: "+ $('#answer').val()+ "    " + msg.result + "<br />");
     })
   })
-});
+};
+
+$(document).ready(ready);
